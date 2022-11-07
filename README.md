@@ -8,3 +8,21 @@ chmod u+x script.sh
 ./script.sh
 
 ```
+
+### Notes
+
+```
+
+read -p "input number:" a # reads input and sets on variable
+
+if [ $a -a $b ] # if a and b is set
+
+if [ $a -o $b ] # if a or b
+
+if [ -z $a ] # if a is set
+
+echo `expr $a $operand $b` # evaluates expression
+
+```
+
+![test](./imgs/ifExample.png)
