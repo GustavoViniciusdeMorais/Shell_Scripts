@@ -23,6 +23,8 @@ if [ -z $a ] # if a is set
 
 echo `expr $a $operand $b` # evaluates expression
 
+read -r x; read -r z; echo `expr $x + $z`
+
 ```
 
 ![test](./imgs/ifExample.png)
