@@ -9,6 +9,11 @@ chmod u+x script.sh
 
 ```
 
+### Sum two numbers at a single line
+```sh
+read -p "a:" a; read -p "b:" b; echo $((a + b))
+```
+
 ### Notes
 
 ```
