@@ -13,7 +13,10 @@ chmod u+x script.sh
 ```sh
 read -p "a:" a; read -p "b:" b; echo $((a + b))
 ```
-
+### One line loop
+```sh
+for val in {1..5}; do echo $val; done
+```
 ### Notes
 
 ```
