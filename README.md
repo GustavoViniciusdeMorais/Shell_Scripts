@@ -23,20 +23,37 @@ for val in {1..5}; do echo $val; done
 ```
 ### Notes
 
+```sh
+# Reads input and sets it in variable 'a'
+read -p "input number: " a
+
+# Checks if both 'a' and 'b' are set
+if [ -n "$a" -a -n "$b" ]; then
+  echo "Both 'a' and 'b' are set."
+fi
+
+# Checks if either 'a' or 'b' is set
+if [ -n "$a" -o -n "$b" ]; then
+  echo "Either 'a' or 'b' is set."
+fi
+
+# Checks if 'a' is empty
+if [ -z "$a" ]; then
+  echo "'a' is empty."
+fi
+
+# Checks if the number of arguments is not equal to 2
+if [ $# -ne 2 ]; then
+  echo "The number of arguments is not equal to 2."
+fi
+# The symbol $# is the number of arguments
+# The symbol -ne stands for "not equal"
+
+# Evaluates expression
+echo $(expr $a $operand $b)
+
+# Reads two inputs and evaluates their sum
+read -r x
+read -r z
+echo $(expr $x + $z)
 ```
-
-read -p "input number:" a # reads input and sets on variable
-
-if [ $a -a $b ] # if a and b is set
-
-if [ $a -o $b ] # if a or b
-
-if [ -z $a ] # if a is set
-
-echo `expr $a $operand $b` # evaluates expression
-
-read -r x; read -r z; echo `expr $x + $z`
-
-```
-
-![test](./imgs/ifExample.png)
