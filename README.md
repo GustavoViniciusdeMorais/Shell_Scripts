@@ -1,22 +1,53 @@
 # Shell Scripts
 
+- [Array](./tutorials/array.md)
+
 ## Enable Permission
 ```
-
 chmod u+x script.sh
 
 ./script.sh
-
 ```
 
-### Sum two numbers at a single line
+### Sum two numbers in a single line
 ```sh
 read -p "a:" a; read -p "b:" b; echo $((a + b))
 ```
-### Math operation at single line
+
+#### Explanation:
+1. **Reading input:**
+   - `read -p "a:" a`: Prompts the user to input a value for variable `a`. The `-p` option allows you to specify a prompt string ("a:") that is displayed to the user.
+   - `read -p "b:" b`: Prompts the user to input a value for variable `b`. The `-p` option specifies the prompt string ("b:") that is displayed to the user.
+2. **Performing arithmetic and printing the result:**
+   - `echo $((a + b))`: Performs the arithmetic operation of adding the values of `a` and `b`, and then prints the result. The `$((...))` syntax is used for arithmetic expansion in the shell, which allows for performing calculations.
+
+### Math operation in a single line
 ```sh
-read -p "a:" a; read -p "b:" b; read -p "o:" o; echo `expr $a $o $b`;
+read -p "a:" a; read -p "b:" b; read -p "o:" o; echo `expr $a $o $b`
 ```
+
+#### Explanation:
+1. **Reading input:** (Refer to the explanation above)
+   - `read -p "a:" a`
+   - `read -p "b:" b`
+   - `read -p "o:" o`: Prompts the user to input a value for variable `o`, which is expected to be a mathematical operator (e.g., `+`, `-`, `*`, `/`). The `-p` option specifies the prompt string ("o:") that is displayed to the user.
+2. **Performing arithmetic and printing the result:**
+   - `echo \`expr $a $o $b\``: Performs the arithmetic operation specified by the operator `o` on the values of `a` and `b`, and then prints the result. The backticks `` `...` `` are used for command substitution, where the expression inside the backticks is executed, and its output is returned. The `expr` command evaluates the expression `$a $o $b`.
+
+### Improved and safer version using `bc`
+To handle floating-point arithmetic and avoid issues with certain operators, we can use `bc` (a command-line calculator):
+```sh
+read -p "a:" a; read -p "b:" b; read -p "o:" o; echo "$a $o $b" | bc
+```
+
+#### Explanation:
+1. **Reading input:** (Refer to the explanation above)
+   - `read -p "a:" a`
+   - `read -p "b:" b`
+   - `read -p "o:" o`
+2. **Performing arithmetic and printing the result:**
+   - `echo "$a $o $b" | bc`: Constructs the arithmetic expression and pipes it to `bc` for evaluation. This method handles floating-point numbers and more complex arithmetic operations.
+
 ### One line loop
 ```sh
 for val in {1..5}; do echo $val; done
