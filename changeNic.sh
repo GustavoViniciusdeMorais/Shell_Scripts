@@ -1,17 +1,17 @@
  #!/bin/bash
 
 # Check if two parameters are provided
-if [ $# -ne 2 ]; then
-    echo "Usage: $0 <interface> <new_nic>"
+if [ $# -ne 1 ]; then
+    echo "Usage: $0 <interface>"
     exit 1
 fi
 
 interface=$1
-new_nic=$2
+new_nic="00:11:22:33:44:55"
 
 # Check if parameters are not empty
-if [ -z "$interface" ] || [ -z "$new_nic" ]; then
-    echo "Interface and new_nic cannot be empty"
+if [ -z "$interface" ]; then
+    echo "Interface cannot be empty"
     exit 1
 fi
 
