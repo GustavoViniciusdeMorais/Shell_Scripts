@@ -7,8 +7,8 @@ if [ "$#" -ne 3 ]; then
 fi
 
 # Assign arguments to variables
-FIRST_DIR=$1
-SECOND_DIR=$2
+FIRST_DIR=$(realpath "$1")
+SECOND_DIR=$(realpath "$2")
 BRANCH_NAME=$3
 
 # Step into the first directory
