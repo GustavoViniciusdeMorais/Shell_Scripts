@@ -1,6 +1,8 @@
 # Shell Scripts
 
 - [Array](./tutorials/array.md)
+- [Copy files from folder](./tutorials/update_repository.md)
+   - This script copies files from one git directory from another, to help simplifying git repositories
 
 ## Enable Permission
 ```
