@@ -3,6 +3,7 @@
 - [Array](./tutorials/array.md)
 - [Copy files from folder](./tutorials/update_repository.md)
    - This script copies files from one git directory from another, to help simplifying git repositories
+- [Loop Curl Cli Shell Linux](./tutorials/loop_curl_cli_shell.md)
 
 ## Enable Permission
 ```
