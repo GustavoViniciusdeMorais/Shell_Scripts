@@ -6,11 +6,9 @@ do
     let runs=runs-1;
 done
 #let dir=$1
-if [ ! -z $1 ]
+if [ $1 > 0 ]
 then
-    let dir="$1"
-    if [ -d $1 ]
-    then
-        ls -la "$1"
-    fi
+    ls -la "$1"
+else
+    echo "$1 is not a directory"
 fi
