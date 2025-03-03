@@ -2,6 +2,7 @@
 
 ### Tutorials:
 - [Ping](./tutorials/ping.md)
+- [IP](./tutorials/ip.md)
 
 ### Tips:
 ```sh
