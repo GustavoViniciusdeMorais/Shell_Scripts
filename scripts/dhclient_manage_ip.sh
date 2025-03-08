@@ -1,12 +1,13 @@
 #!/bin/bash
+
 # echo $#; exit 1
+# use command: dhclient -r eth0, to release current ip
 if [ $# -lt 1 ]; then
     echo "Usage: $0 <interface>"
     exit 1
 fi
 
 interface=$1
-
 ip_address=$(ip a show dev $1 | grep "inet")
 
 if [ -z "$ip_address" ]; then
