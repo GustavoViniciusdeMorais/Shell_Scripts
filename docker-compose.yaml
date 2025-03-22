@@ -1,0 +1,80 @@
+version: '3.5'
+
+services:
+    # alpine_gustavo:
+    #     build:
+    #         context: .
+    #         dockerfile: alpine.dockerfile
+    #     volumes:
+    #         - ./:/var/www/html
+    #     ports:
+    #         - 80:80
+    #     container_name: alpine_gustavo
+    #     networks:
+    #         kali-app-network:
+    #             ipv4_address: 17.0.0.3
+
+    # kali:
+    #     build:
+    #         context: .
+    #         dockerfile: kali.dockerfile
+    #     volumes:
+    #         - ./:/var/www/html
+    #     container_name: kali
+    #     networks:
+    #         kali-app-network:
+    #             ipv4_address: 17.0.0.8
+
+    # arch:
+    #     build:
+    #         context: .
+    #         dockerfile: arch.dockerfile
+    #     container_name: arch
+    #     ports:
+    #         - 81:81
+    #     volumes:
+    #         - ./:/var/www/html
+    #     networks:
+    #         - kali-app-network
+    
+    ubuntu:
+        build:
+            context: .
+            dockerfile: ubuntu.dockerfile
+        container_name: ubuntu
+        ports:
+            - 8080:80
+            - "67:67/udp"
+            - 2068:68
+            - 2021:21
+            - 3307:3306
+        volumes:
+            - ./:/var/www/html
+        cap_add:
+            - NET_ADMIN
+        networks:
+            kali-app-network:
+                ipv4_address: 10.0.0.3
+    
+    parrot:
+        build:
+            context: .
+            dockerfile: parrot.dockerfile
+        volumes:
+            - ./:/var/www/html
+        ports:
+            - 81:81
+        cap_add:
+            - NET_ADMIN
+        container_name: parrot
+        networks:
+            kali-app-network:
+                ipv4_address: 10.0.0.4
+
+networks:
+    kali-app-network:
+        driver: bridge
+        ipam:
+            driver: default
+            config:
+                - subnet: "10.0.0.0/16"
