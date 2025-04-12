@@ -1,5 +1,5 @@
 # Routing table
-- [script example]()
+- [script example](../scripts/add_route.sh)
 ```bash
 # network adress
 # gateway
