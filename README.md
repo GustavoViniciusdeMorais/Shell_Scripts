@@ -3,6 +3,7 @@
 ### Tutorials:
 - [Ping](./tutorials/ping.md)
 - [IP](./tutorials/ip.md)
+- [Routing table](./tutorials/routing_table.md)
 
 ### Tips:
 ```sh
