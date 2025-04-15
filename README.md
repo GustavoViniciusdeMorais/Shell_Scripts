@@ -51,6 +51,11 @@ read -p "a:" a; read -p "b:" b; read -p "o:" o; echo "$a $o $b" | bc
 2. **Performing arithmetic and printing the result:**
    - `echo "$a $o $b" | bc`: Constructs the arithmetic expression and pipes it to `bc` for evaluation. This method handles floating-point numbers and more complex arithmetic operations.
 
+### Filter files to delete
+```sh
+for val in $(ls); do if [ "$val" != "car.png" ]; then rm -rf $val; fi; done
+```
+
 ### One line loop
 ```sh
 for val in {1..5}; do echo $val; done
