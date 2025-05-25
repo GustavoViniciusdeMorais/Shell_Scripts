@@ -4,6 +4,7 @@
 - [Ping](./tutorials/ping.md)
 - [IP](./tutorials/ip.md)
 - [Routing table](./tutorials/routing_table.md)
+- [DNS Client](./tutorials/dns_client.md)
 
 ### Tips:
 ```sh
