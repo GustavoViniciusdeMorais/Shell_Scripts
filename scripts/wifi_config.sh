@@ -1,7 +1,7 @@
 #!/bin/bash
 interface="wlp0s20f3"
 ssid="Gustavo2G"
-password="Gusbot259#"
+password=""
 # temp conf file
 wpa_config=$(mktemp)
 cat << EOF > $wpa_config
