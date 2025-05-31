@@ -4,6 +4,7 @@
 - [Copy files from folder](./tutorials/update_repository.md)
    - This script copies files from one git directory from another, to help simplifying git repositories
 - [Loop Curl Cli Shell Linux](./tutorials/loop_curl_cli_shell.md)
+- [Square root](./square_root.sh)
 
 ## Enable Permission
 ```
