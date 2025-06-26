@@ -12,7 +12,11 @@ chmod u+x script.sh
 
 ./script.sh
 ```
-
+### cli collor
+```bash
+echo -e "\e[34m" # colors ansi code
+echo -e "\e[0m" # reset
+```
 ### Sum two numbers in a single line
 ```sh
 read -p "a:" a; read -p "b:" b; echo $((a + b))
