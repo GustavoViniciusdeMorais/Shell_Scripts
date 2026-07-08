@@ -106,4 +106,5 @@ echo $(expr $x + $z)
 ```bash
 echo $(expr 4 \* 2)
 echo $((3 * 3))
+echo $((n - p - q + 1))
 ```
