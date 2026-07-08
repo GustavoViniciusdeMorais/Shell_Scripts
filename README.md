@@ -102,3 +102,8 @@ read -r x
 read -r z
 echo $(expr $x + $z)
 ```
+### Math examples
+```bash
+echo $(expr 4 \* 2)
+echo $((3 * 3))
+```
